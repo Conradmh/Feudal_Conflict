@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="css/style.css">
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.js">
+    </script>
+    <title>Feudal Conflict</title>
+  </head>
+  <body>
+    <header>
+      <div class="displayContainer">
+        <span class='counter'>Round Counter</span>
+        <span class='counter'>Turn Counter</span>
+        <span class='points'>Player 1 points</span>
+        <span class='points'>Player 2 points</span>
+      </div>
+    </header>
+    <main class='buttonsContainer'>
+      <div class="buttons"id="red" >
+        <button class="actionButtons" type="button" id="red">red</button>
+      </div>
+      <div class="buttons"id="blue" >
+        <button class="actionButtons" type="button" id="blue">blue</button>
+      </div>
+      <div class="buttons"id="green" >
+        <button class="actionButtons" type="button" id="green">green</button>
+      </div>
+      <div class="buttons"id="random" >
+        <button class="actionButtons" type="button" id="random">random</button>
+      </div>
+    </main>
+    <div class="leftAside">
+      <aside class="pools" id='player1Pool'></aside>
+    </div>
+    <div class="rightAside">
+      <aside class="pools" id='player2Pool'></aside>
+    </div>
+
+
+    <script type="text/javascript" src="js/app.js"></script>
+  </body>
+</html>
