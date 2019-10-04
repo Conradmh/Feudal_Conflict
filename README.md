@@ -18,7 +18,7 @@ Users take 2 turns per round
   - building's values: basic(1pt), complex(2pt)
   - builing costs:
   basic: 2(R||G||B), 3(S), or 1(RGB)
-  complex: basic building token + 3(S)&& 2(R||G||B)
+  complex: basic building token + 2(RGB)
 
 
 Placement (button) functions:
@@ -35,6 +35,26 @@ users race to buy building tokens to earn them points,
 
 
 Future versions of this game will:
+ * add addition placement options:
+    1. Draw 1 interaction card + collect 1 random resource from game pool
+    2. Play 1 interaction card + collect 1 random resource from game pool
+ 
+ * add a new resource:
+  * silver: will be used to purchase buildings
+ 
  * add interaction cards
- * add another level of buildings
+    Interaction card functions:
+      1. Take 1 selected type resource token from opponents pool
+      2. Take 2 random resource tokens from game pool
+      3. Take 1 extra turn next round
+      4. Collect 1 basic building token from game pool
+      5. Collect 4 silver resource tokens from game pool
+      6. Take 1 of any resource token
+      7. Allows 1 button selection which the opponent has already selected
+      8. Take 1 interaction card from oppponents hand at random
+      9. Collect 1 point
+ * add another level of buildings  (Metropolis)
+    * metro: complex building token + 4(R||G||B) +6 (S)
+    * metro: point value of 4
  * change endstate to higher values
+  * endgame set to 10pts or 8 rounds
