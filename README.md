@@ -8,7 +8,7 @@ Each user has  a resource pool and a building pool
 The game has:
 - 4 individual buttons with attributed functions
 - 1 resource token pool with 3 types of resources (R,G,B)
-- 1 container of 8 basic house tokens, 6 complex houses tokens, 4 metropolis tokens
+- 1 container of 8 basic house tokens, 6 complex houses tokens
 
 Play:
 Users take 2 turns per round
