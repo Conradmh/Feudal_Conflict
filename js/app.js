@@ -1,5 +1,6 @@
 class User {
   constructor(name){
+    this.name = name,
     this.red = 0,
     this.blue = 0,
     this.green = 0,
@@ -7,8 +8,14 @@ class User {
     this.buildings = []
 
   }
-}
 
+};
+// class Structure {
+//   constructor(name){
+//     this.name = name,
+//     this.points = 0,
+//   }
+// }
 const game = {
   rounds: null,
   turns: null,
@@ -48,7 +55,16 @@ const game = {
     console.log(this.player.blue, " :blue");
     console.log(this.player.green, " :green");
   },
+  buyBasicBuilding(){
+    //const building = new Structure (basic);
 
+    this.player.red -= 1;
+    this.player.blue -= 1;
+    this.player.green -= 1;
+    this.player.buildings = this.player.buildings.push(1);
+    console.log(game.player.buildings, " :in function");
+
+  }
 }
 
 $('#red').on('click', () => {
@@ -75,6 +91,11 @@ $('#random').on('click', () => {
 
 });
 
+$('#purchase').on('click', () => {
+  game.buyBasicBuilding();
+  console.log(game.player.buildings,' :event');
+
+});
 $('form').on('submit', (e) => {
   $('#inputBox').val()
   e.preventDefault();
