@@ -12,15 +12,12 @@ body {
 
 }
 .buttons {
-color: rgb(255, 42, 254);
-font-size: 22px;
-line-height: 22px;
-padding: 11px;
-border-radius: 30px;
-font-family: Georgia, serif;
-font-weight: normal;
-text-decoration: none;
-font-style: normal;
-font-variant: normal;
-text-transform: none;
-background-image: radial-gradient(at center center, rgb(255, 60, 118) 0%, rgb(29, 80, 203) 89%, rgb(117, 40, 95) 100%); box-shadow: 5px 5px 18px 15px #000000; border: 2px ridge rgb(28, 110, 164); display: inline-block;
+  color: rgb(255, 42, 254); font-size: 22px; line-height: 22px; padding: 11px; border-radius: 30px; font-family: Georgia, serif; font-weight: normal; text-decoration: none; font-style: normal; font-variant: normal; text-transform: none; background-image: radial-gradient(at center center, rgb(255, 60, 118) 0%, rgb(29, 80, 203) 89%, rgb(117, 40, 95) 100%); box-shadow: rgb(0, 0, 0) 5px 5px 18px 15px; border: 2px ridge rgb(28, 110, 164); display: inline-block;}
+  buttons:hover {
+  background: #FF3C76; }
+  .buttons:active {
+  background: #75285F; }
+  background: #FF3C76;
+  background: -moz-radial-gradient(center, #FF3C76 0%, #1D50CB 89%, #75285F 100%);
+  background: -webkit-radial-gradient(center, #FF3C76 0%, #1D50CB 89%, #75285F 100%);
+  background: radial-gradient(ellipse at center, #FF3C76 0%, #1D50CB 89%, #75285F 100%);
