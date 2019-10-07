@@ -82,6 +82,19 @@ const game = {
       game.rounds++;
       $rounds.text(`Round: ${game.rounds}`);
     }
+  },
+  endGame(){
+    if (this.rounds === 9) {
+
+    }
+  },
+  buttonsDisable(){
+    const $actionButtons = $(`.actionButtons`);
+    if (game.rounds === 9) {
+      $actionButtons.prop(`disabled`, true);
+    } else {
+      $actionButtons.prop(`disabled`, false);
+    }
   }
 }
 
@@ -138,7 +151,7 @@ $('#purchase').on('click', () => {
 
 $('#endTurn').on('click', () => {
   game.endTurn();
-
+  game.buttonsDisable();
 
 
 });
