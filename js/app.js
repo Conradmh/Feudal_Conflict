@@ -56,6 +56,7 @@ const game = {
   buyBasicBuilding(){
     //const building = new Structure (basic);
     const $p1Points = $('#p1Points');
+    const $buyButton = $(`#buy`);
     if (this.player.red > 0 && this.player.blue > 0 &&
       this.player.green > 0) {
 
@@ -67,6 +68,7 @@ const game = {
         $p1Points.text(`Player 1 points: ${game.player.points}`)
         console.log(game.player.buildings, " :in function");
     } else {
+      $buyButton.prop(`disabled`, true);
       console.log('not enough resources');
     }
   },
@@ -104,6 +106,8 @@ $('#red').on('click', () => {
     game.addRed();
     game.turnCounter--;
   } else {
+      const $redButton = $(`#red`);
+      $redButton.prop(`disabled`, true);
     console.log('No more actions available');
   }
 });
@@ -114,7 +118,9 @@ $('#blue').on('click', () => {
     game.addBlue();
     game.turnCounter--;
   } else {
-    console.log('No more actions available');
+      const $blueButton = $(`#blue`);
+      $blueButton.prop(`disabled`, true);
+      console.log('No more actions available');
   }
 });
 
@@ -124,7 +130,9 @@ $('#green').on('click', () => {
     game.addGreen();
     game.turnCounter--;
   } else {
-    console.log('No more actions available');
+      const $greenButton = $(`#green`);
+      $greenButton.prop(`disabled`, true);
+      console.log('No more actions available');
   }
 });
 
@@ -135,14 +143,16 @@ $('#random').on('click', () => {
     game.addRandom();
     game.turnCounter--;
   } else {
-    console.log('No more actions available');
+      const $randomButton = $(`#random`);
+      $randomButton.prop(`disabled`, true);
+      console.log('No more actions available');
   }
   console.log(game.player.red, " :red");
   console.log(game.player.blue, " :blue");
   console.log(game.player.green, " :green");
 });
 
-$('#purchase').on('click', () => {
+$('#buy').on('click', () => {
   game.buyBasicBuilding();
 
   console.log(game.player.buildings,' :event');
