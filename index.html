@@ -10,38 +10,44 @@
   <body>
     <header>
       <div class="displayContainer">
-        <span class='counter' id='rounds'>Round Counter</span>
-        <span class='counter' id='turn'>Turn Counter</span>
-        <span class='points' id="p1Points">Player 1 points</span>
-        <!-- <span class='points' id="p2Points">Player 2 points</span> -->
+        <span class='counter' id='rounds'>Round Counter  </span>
+        <span class='counter' id='turn'>Turn Counter  </span>
+      </div>
+      <div class="buyAndEnd">
+        <button class="" type="button" id="buy">Buy</button>
+        <button class="" type="button" id="endTurn">End Your Turn</button>
       </div>
     </header>
     <main class='buttonsContainer'>
-      <div class="buttons" >
+      <div class="leftAside">
+        <aside class="pools" id='player1Pool'>
+          <div class="playerStats" id="player1Stats">
+            <div class="" id="p1Name"></div>
+            <div class="" id="p1Red"></div>
+            <div class="" id="p1Blue"></div>
+            <div class=""id="p1Green"></div>
+            <div class="" id="p1Points"></div>
+          </div>
+        </aside>
+      </div>
+      <!-- <div class="buttons" > -->
         <button class="actionButtons" type="button" id="red">red</button>
-      </div>
-      <div class="buttons" >
+      <!-- </div> -->
+      <!-- <div class="buttons" > -->
         <button class="actionButtons" type="button" id="blue">blue</button>
-      </div>
-      <div class="buttons" >
-        <button class="actionButtons" type="button" id="green">green</button>
-      </div>
-      <div class="buttons" >
+      <!-- </div> -->
+      <!-- <div class="buttons" > -->
+        <button class="actionButtons" type="button" id="green">green</button>start
+      <!-- </div>
+      <div class="buttons" > -->
         <button class="actionButtons" type="button" id="random">random</button>
+      <!-- </div>
+      <div class="buttons" > -->
+      <div class="rightAside">
+        <aside class="pools" id='player2Pool'></aside>
       </div>
-      <div class="buttons" >
-        <button class="actionButtons" type="button" id="buy">Buy</button>
-      </div>
-      <div class="buttons" >
-        <button class="actionButtons" type="button" id="endTurn">End Your Turn</button>
-      </div>
+      <!-- </div> -->
     </main>
-    <div class="leftAside">
-      <aside class="pools" id='player1Pool'></aside>
-    </div>
-    <div class="rightAside">
-      <aside class="pools" id='player2Pool'></aside>
-    </div>
     <div class="submitFormBox">
           <form id="submitForm">
             <input type="text" id="inputBox" placeholder="Enter users name here">

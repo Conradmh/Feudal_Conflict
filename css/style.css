@@ -1,23 +1,103 @@
 body {
   background-color: darkgrey;
+  background-image: url(https://images-na.ssl-images-amazon.com/images/I/B1V%2B-yS4aaS.png);
+}
+header {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+}
+.displayContainer {
+  display: flex;
+  width: auto;
+  height: 150px;
+  justify-content: center;
+  font-size: 3em;
+}
+.buyAndEnd {
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+}
+#buy {
+  background-color: rgba(0,51,51,0.8);
+  color: orange;
+  height: 100px;
+  width: 100px;
+  border-radius: 75%;
+  text-align: center;
+  margin-bottom: : 20px;
+}
+#endTurn {
+  background-color: rgba(0,0,51,0.8);
+  color: orange;
+  height: 75px;
+  width: 75px;
+  border-radius: 75%;
+  margin-top: 20px;
 }
 .buttonsContainer {
   display: flex;
   width: auto;
   height: 250px;
-  align-items: flex-end;
-  justify-content: center;
+  justify-content: space-between;
 
+}
+.actionButtons {
+  display: flex;
+  padding: 45px;
+  margin: 10px;
+  border-radius: 75%;
+  background-color: rgba(51,0,51,0.9);
+  color: orange;
+  /* flex-basis: 150px;
+  flex-grow: 1; */
+}
+#red {
+  padding: 47px;
+  height: 125px;
+  width: 125px;
+  display: flex;
+  align-self: flex-start;
+}
+#blue {
+  padding: 45px;
+  height: 125px;
+  width: 125px;
+  display: flex;
+  align-self: flex-end;
+}
+#green {
+  padding: 40px;
+  height: 125px;
+  width: 125px;
+  display: flex;
+  align-self: flex-end;
+}
+#random {
+  padding: 37px;
+  height: 125px;
+  width: 125px;
+  display: flex;
+  align-self: flex-start;
 }
 .leftAside {
   display: flex;
-  background-color: forestgreen;
+  width: 200px;
+  background-color: rgba(254, 255, 251, 0.76);
+  font-size: 2.5em;
+  margin-left: 30px;
+  text-align:justify;
+  color: red;
 
 }
 .rightAside {
-  display: flex;
-  background-color: forestgreen;
-
+    display: flex;
+    width: 200px;
+    background-color: rgba(176,196,222,0.26);
+    font-size: 2.5em;
+    margin-right: 30px;
+    text-align:justify;
 }
 /* .buttons { */
   /* color: rgb(255, 42, 254); font-size: 22px; line-height: 22px; padding: 11px; border-radius: 30px; font-family: Georgia, serif; font-weight: normal; text-decoration: none; font-style: normal; font-variant: normal; text-transform: none; background-image: radial-gradient(at center center, rgb(255, 60, 118) 0%, rgb(29, 80, 203) 89%, rgb(117, 40, 95) 100%); box-shadow: rgb(0, 0, 0) 5px 5px 18px 15px; border: 2px ridge rgb(28, 110, 164); display: inline-block;}

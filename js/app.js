@@ -9,6 +9,21 @@ class User {
 
   }
 
+  showStats() {
+    const $p1Name = $(`#p1Name`);
+    const $p1Red = $(`#p1Red`);
+    const $p1Blue = $(`#p1Blue`);
+    const $p1Green = $(`#p1Green`);
+    const $p1Points = $(`#p1Points`);
+
+    $p1Name.text(`${game.player.name}`);
+    $p1Red.text(`Red: ${game.player.red}`);
+    $p1Blue.text(`Blue: ${game.player.blue}`);
+    $p1Green.text(`Green: ${game.player.green}`);
+    $p1Points.text(`Score: ${game.player.points}`);
+
+  }
+
 };
 // class Structure {
 //   constructor(name){
@@ -19,27 +34,35 @@ class User {
 const game = {
   rounds: 1,
   turns: null,
-  player: null,
+  player: null, //array of players for multi
   turnCounter: 2,
   sum: null,
 
   start(){
     const user = new User($('#inputBox').val());
     this.player = user;
+    user.showStats();
 
   },
   // generates and allocates resource selections
+  // consider writing one function that takes an input of
+  // the event listener (console.log([e.target]);)
   addRed(){
     this.player.red += 1 ;
     console.log(this.player.red, " :addRed function");
+    this.player.showStats();
+
   },
   addBlue(){
     this.player.blue += 1 ;
     console.log(this.player.blue, ' :addBlue function');
+    this.player.showStats();
+
   },
   addGreen(){
     this.player.green += 1 ;
     console.log(this.player.green, " :addGreenfunction");
+    this.player.showStats();
   },
   addRandom(){
     //this.player.red += 3 ;
@@ -52,9 +75,12 @@ const game = {
     } else {
       this.addGreen();
     }
+    this.player.showStats();
   },
   buyBasicBuilding(){
     //const building = new Structure (basic);
+
+    //reformat this to put the 'this.' in the player class and call it
     const $p1Points = $('#p1Points');
     const $buyButton = $(`#buy`);
     if (this.player.red > 0 && this.player.blue > 0 &&
@@ -67,6 +93,7 @@ const game = {
         this.player.points++;
         $p1Points.text(`Player 1 points: ${game.player.points}`)
         console.log(game.player.buildings, " :in function");
+        this.player.showStats();
     } else {
       $buyButton.prop(`disabled`, true);
       console.log('not enough resources');
@@ -100,11 +127,13 @@ const game = {
   }
 }
 
-$('#red').on('click', () => {
+$('#red').on('click', (e) => {
+  console.log($(e.target).text())
   if (game.turnCounter > 0) {
     game.addRed();
     game.addRed();
     game.turnCounter--;
+    //user.showStats();DUCATION
   } else {
       const $redButton = $(`#red`);
       $redButton.prop(`disabled`, true);
@@ -117,6 +146,7 @@ $('#blue').on('click', () => {
     game.addBlue();
     game.addBlue();
     game.turnCounter--;
+  //  user.showStats();
   } else {
       const $blueButton = $(`#blue`);
       $blueButton.prop(`disabled`, true);
@@ -129,6 +159,7 @@ $('#green').on('click', () => {
     game.addGreen();
     game.addGreen();
     game.turnCounter--;
+    //user.showStats();
   } else {
       const $greenButton = $(`#green`);
       $greenButton.prop(`disabled`, true);
@@ -142,6 +173,7 @@ $('#random').on('click', () => {
     game.addRandom();
     game.addRandom();
     game.turnCounter--;
+  //  user.showStats();
   } else {
       const $randomButton = $(`#random`);
       $randomButton.prop(`disabled`, true);
@@ -154,6 +186,7 @@ $('#random').on('click', () => {
 
 $('#buy').on('click', () => {
   game.buyBasicBuilding();
+//  user.showStats();
 
   console.log(game.player.buildings,' :event');
 
