@@ -39,7 +39,7 @@ header {
 .buttonsContainer {
   display: flex;
   width: auto;
-  height: 250px;
+  height: 400px;
   justify-content: space-between;
 
 }

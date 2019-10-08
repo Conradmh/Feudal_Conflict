@@ -34,13 +34,13 @@ class User {
 const game = {
   rounds: 1,
   turns: null,
-  player: null, //array of players for multi
+  player: [], //array of players for multi
   turnCounter: 2,
   sum: null,
 
   start(){
     const user = new User($('#inputBox').val());
-    this.player = user;
+    this.player[i] = user;
     user.showStats();
 
   },
@@ -128,7 +128,7 @@ const game = {
 }
 
 $('#red').on('click', (e) => {
-  console.log($(e.target).text())
+  console.log($([e.target]).text())
   if (game.turnCounter > 0) {
     game.addRed();
     game.addRed();
