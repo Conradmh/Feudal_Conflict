@@ -37,16 +37,27 @@ const game = {
   player: [], //array of players for multi
   turnCounter: 2,
   sum: null,
-
+//players: null, number of players as a property
   start(){
-    const user = new User($('#inputBox').val());
-    this.player[i] = user;
-    user.showStats();
-
+  //   this.createPlayer();
+  //   this.createPlayer();
+     $('form').hide();
+  //   //user.showStats();
+  //
   },
-  // generates and allocates resource selections
+
   // consider writing one function that takes an input of
   // the event listener (console.log([e.target]);)
+  createPlayer(){
+    const user = new User($('#inputBox').val());
+    this.player.push(user);
+    console.log(this.player);
+    user.showStats();
+    $('#inputBox').val('');
+    $('#inputBox').attr('placeholder', 'Player 2 name');
+
+    // change attr of placeholder with interpolation of array index
+  },
   addRed(){
     this.player.red += 1 ;
     console.log(this.player.red, " :addRed function");
@@ -199,9 +210,19 @@ $('#endTurn').on('click', () => {
 
 });
 $('form').on('submit', (e) => {
-  $('#inputBox').val()
+  // $('#inputBox').val();
   e.preventDefault();
-  $('form').hide();
-  $('inputBox').html();
-  game.start();
+  game.createPlayer();
+  // $('form').hide();
+  // $('form').hide();
+  // $('inputBox').html();
+  // change attr of placeholder with interpolation of array index
+  //game.createPlayer();
+  // game.start();
 });
+$('#start').on('click', () => {
+
+  $('form').hide();
+
+});
+//game.start();

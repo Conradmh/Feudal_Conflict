@@ -116,27 +116,43 @@ header {
 
   .submitFormBox {
     display: flex;
-    height: 50px;
+    height: 250px;
     width: auto;
     justify-content: center;
     margin: 0;
+    flex-direction: column;
   }
   #submitForm {
-    height: 50px;
+    height: 225px;
     width: auto;
     display: flex;
     justify-content: center;
     margin: 0;
-
+    flex-direction: column;
 
   }
   #submitBut{
     background-color: lightslategrey;
     color: white;
+    width: 75px;
   }
   #inputBox {
     background-color: steelblue;
     width: 410px;
+  }
+  .startButton {
+    height: 225px;
+    width: 200px;
+    display: flex;
+    justify-content: center;
+    margin: 0;
+  }
+  #start{
+    height: 125px;
+    width: 125px;
+    display: flex;
+    border-radius: 75%;
+
   }
     ::-webkit-input-placeholder { /* Chrome/Opera/Safari */
       color: pink;
