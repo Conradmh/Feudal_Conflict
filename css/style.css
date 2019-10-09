@@ -154,6 +154,10 @@ header {
     border-radius: 75%;
 
   }
+
+  .hidden {
+    display: none;
+  }
     ::-webkit-input-placeholder { /* Chrome/Opera/Safari */
       color: pink;
       font-size: 2em;

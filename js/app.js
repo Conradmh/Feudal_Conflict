@@ -103,34 +103,21 @@ const game = {
     console.log(this.player);
     user.showStats();
     $('#inputBox').val('');
-    $('#inputBox').attr('placeholder', 'Player 2 name');
-
+    $('#inputBox').attr('placeholder', `Player ${game.player.length + 1} name`);
     // change attr of placeholder with interpolation of array index
   },
+
   currentTurn(){
     const $playersTurn = $('#turn');
     $playersTurn.text(`| ${this.player[game.currentPlayer].name}'s  Turn`);
-
-
   },
+
   currentRound(){
     const $gameRound = $('#rounds');
     $gameRound.text(`Round: ${this.rounds} |`);
-
-
   },
-  // curPlayer(){
-  //   this.currentPlayer = this.player[this.turnCounter % 2];
-  // },
-  // sumPointsArray(){
-  // this.player.buildings.reduce(reducer);
-  //
-  // },
+
   endTurn(){
-    // if currentPlayer is array.length-1
-      // currentPlayer = 0
-    // else
-      // currentPlayer++
 
       if (this.player[game.currentPlayer].actions === 0) {
         this.turnCounter--;
@@ -142,18 +129,42 @@ const game = {
           this.currentPlayer++;
         }
       }
+      this.endRound();
   },
   endRound(){
-    //const $rounds = $('#rounds');
-    this.turnCounter += 4;
-    this.rounds++;
-    currentRound();
-    //$rounds.text(`Round: ${this.rounds}`);
-
+    if (this.turnCounter === 0) {
+      this.turnCounter += 4;
+      this.rounds++;
+      this.currentRound();
+      this.endGame();
+    }
   },
-  endGame(){
-    if (this.rounds === 9) {
 
+  getWinner(){
+    let winningPlayer = null;
+    if (this.player[0].points < this.player[1].points) {
+      winningPlayer = this.player[1].points;
+    } else if (this.player[0].points > this.player[1].points) {
+      winningPlayer = this.player[0].points;
+    } else {
+      winningPlayer = 'Its a Tie!'
+    } return winningPlayer;
+
+    // .map .sort max.math
+    // let winningInt = null;
+    //   for (let i = 0; i < this.player.length; i++) {
+    //   Math.max(this.player.points);
+    //   }
+    // }
+  },
+
+  endGame(){
+    const $clearScreen = $('.game');
+    const $winScreen = $('.winScreenContainer');
+    if (this.rounds === 9) {
+      $winScreen.text(`${this.getWinner()}`);
+      $clearScreen.addClass('hidden');
+      $winScreen.removeClass('hidden');
     }
   },
   buttonsDisable(){
@@ -240,4 +251,8 @@ $('#start').on('click', () => {
   $('form').hide();
   game.currentTurn();
   game.currentRound();
+});
+
+$('#newGame').on('click', () => {
+  location.reload(true);
 });

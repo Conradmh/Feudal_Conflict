@@ -8,6 +8,7 @@
     <title>Feudal Conflict</title>
   </head>
   <body>
+    <div class="game">
     <header>
       <div class="displayContainer">
         <span class='counter' id='rounds'>Round Counter  </span>
@@ -46,7 +47,6 @@
             <div class="" id="p2Actions"></div>
           </div></aside>
       </div>
-      <!-- </div> -->
     </main>
     <div class="submitFormBox">
           <form id="submitForm">
@@ -57,7 +57,11 @@
             </div>
           </form>
     </div>
-
+  </div>
+  <div class="winScreenContainer hidden">
+    <div id="winMessage">X player won  </div>
+    <button type="button" name="button" id="newGame">New Game?</button>
+  </div>
     <script type="text/javascript" src="js/app.js"></script>
   </body>
 </html>
