@@ -8,11 +8,11 @@
     <title>Feudal Conflict</title>
   </head>
   <body>
-    <div class="game">
+    <div class="game hidden">
     <header>
       <div class="displayContainer">
-        <span class='counter' id='rounds'>Round Counter  </span>
-        <span class='counter' id='turn'>Turn Counter  </span>
+        <span class='counter' id='rounds'> </span>
+        <span class='counter' id='turn'>  </span>
       </div>
       <div class="buyAndEnd">
         <button class="" type="button" id="buy">Buy</button>
@@ -48,15 +48,15 @@
           </div></aside>
       </div>
     </main>
-    <div class="submitFormBox">
-          <form id="submitForm">
-            <input type="text" id="inputBox" placeholder="Enter users name here">
-            <input type="submit" id="submitBut" value="Submit">
-            <div class="startButton">
-              <button class="actionButtons" type="button" id="start">Start</button>
-            </div>
-          </form>
-    </div>
+  </div>
+  <div class="submitFormBox">
+    <form id="submitForm">
+      <input type="text" id="inputBox" placeholder="Enter users name here">
+      <input type="submit" id="submitBut" value="Submit">
+      <div class="startButton">
+        <button class="actionButtons" type="button" id="start">Start</button>
+      </div>
+    </form>
   </div>
   <div class="winScreenContainer hidden">
     <div id="winMessage">X player won  </div>
