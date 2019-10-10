@@ -244,7 +244,9 @@ $('form').on('submit', (e) => {
 
 });
 $('#start').on('click', () => {
-  $('form').hide();
+  $('.submitFormBox').hide();
+  $('.startButton').addClass('hidden');
+  $('.game').removeClass('hidden');
   game.currentTurn();
   game.currentRound();
 });
