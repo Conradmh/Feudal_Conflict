@@ -3,7 +3,6 @@ class User {
     this.name = name,
     this.id = id,
     this.actions = 1,
-    //this.myTurn = false,
     this.red = 0,
     this.blue = 0,
     this.green = 0,
@@ -42,28 +41,25 @@ class User {
 
     this.showStats();
   }
-  // buyBasicBuilding(){
+  buyBasicBuilding(){
   //   //const building = new Structure (basic);
   //
   //   //reformat this to put the 'this.' in the player class and call it
-  //   const $p1Points = $('#p1Points');
-  //   const $buyButton = $(`#buy`);
-  //   if (this.player.red > 0 && this.player.blue > 0 &&
-  //     this.player.green > 0) {
-  //
-  //       this.player.red -= 1;
-  //       this.player.blue -= 1;
-  //       this.player.green -= 1;
-  //       this.player.buildings.push(1);
-  //       this.player.points++;
-  //       $p1Points.text(`Player 1 points: ${game.player.points}`)
-  //       console.log(game.player.buildings, " :in function");
-  //       this.player.showStats();
-  //     } else {
-  //       $buyButton.prop(`disabled`, true);
-  //       console.log('not enough resources');
-  //     }
-  //   },
+
+    const $buyButton = $(`#buy`);
+    if (this.red > 0 && this.blue > 0 &&
+      this.green > 0) {
+
+        this.red -= 1;
+        this.blue -= 1;
+        this.green -= 1;
+        this.buildings.push(1);
+        this.points++;
+      } else {
+        //$buyButton.prop(`disabled`, true);
+        console.log('not enough resources');
+      }
+  }
 
   showStats() {
    const $pName = $(`#p${this.id}Name`);
@@ -143,9 +139,9 @@ const game = {
   getWinner(){
     let winningPlayer = null;
     if (this.player[0].points < this.player[1].points) {
-      winningPlayer = this.player[1].points;
+      winningPlayer = this.player[1].name;
     } else if (this.player[0].points > this.player[1].points) {
-      winningPlayer = this.player[0].points;
+      winningPlayer = this.player[0].name;
     } else {
       winningPlayer = 'Its a Tie!'
     } return winningPlayer;
@@ -162,7 +158,7 @@ const game = {
     const $clearScreen = $('.game');
     const $winScreen = $('.winScreenContainer');
     if (this.rounds === 9) {
-      $winScreen.text(`${this.getWinner()}`);
+      $winScreen.text(`Player${this.getWinner()} wins!`);
       $clearScreen.addClass('hidden');
       $winScreen.removeClass('hidden');
     }
@@ -229,10 +225,10 @@ $('#random').on('click', () => {
 
 });
 
-// $('#buy').on('click', () => {
-//   game.buyBasicBuilding();
-//   console.log(game.player.buildings,' :event');
-// });
+$('#buy').on('click', () => {
+  game.player[game.currentPlayer].buyBasicBuilding();
+  game.player[game.currentPlayer].showStats();
+});
 
 $('#endTurn').on('click', () => {
   game.endTurn();

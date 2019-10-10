@@ -154,7 +154,13 @@ header {
     border-radius: 75%;
 
   }
+  .winScreenContainer{
+    font-size: 5em;
+    color: crimson;
+    text-align: center;
+    align-content: center;  
 
+  }
   .hidden {
     display: none;
   }
