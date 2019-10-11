@@ -42,9 +42,7 @@ class User {
     this.showStats();
   }
   buyBasicBuilding(){
-  //   //const building = new Structure (basic);
-  //
-  //   //reformat this to put the 'this.' in the player class and call it
+
 
     const $buyButton = $(`#buy`);
     if (this.red > 0 && this.blue > 0 &&
@@ -56,7 +54,6 @@ class User {
         this.buildings.push(1);
         this.points++;
       } else {
-        //$buyButton.prop(`disabled`, true);
         console.log('not enough resources');
       }
   }
@@ -81,17 +78,12 @@ class User {
 };
 const game = {
   rounds: 1,
-  player: [], //array of players for multi
-  turnCounter: 4, //will  need to be 2x the number of names in array
+  player: [], 
+  turnCounter: 4,
   sum: null,
   currentPlayer: 0,
 
-  // start(){
-  //    $('form').hide();
-  // },
 
-  // consider writing one function that takes an input of
-  // the event listener (console.log([e.target]);)
   createPlayer(){
     const idNumber = this.player.length + 1;
     const user = new User(idNumber, $('#inputBox').val());
@@ -100,7 +92,7 @@ const game = {
     user.showStats();
     $('#inputBox').val('');
     $('#inputBox').attr('placeholder', `Player ${game.player.length + 1} name`);
-    // change attr of placeholder with interpolation of array index
+
   },
 
   currentTurn(){
@@ -146,19 +138,14 @@ const game = {
       winningPlayer = 'Its a Tie!'
     } return winningPlayer;
 
-    // .map .sort max.math
-    // let winningInt = null;
-    //   for (let i = 0; i < this.player.length; i++) {
-    //   Math.max(this.player.points);
-    //   }
-    // }
+
   },
 
   endGame(){
     const $clearScreen = $('.game');
     const $winScreen = $('.winScreenContainer');
     const $winMessage = $('#winMessage');
-    if (this.rounds === 9) {
+    if (this.rounds === 5) {
       $winMessage.text(`Player ${this.getWinner()} wins!`);
       $clearScreen.addClass('hidden');
       $winScreen.removeClass('hidden');
@@ -166,7 +153,7 @@ const game = {
   },
   buttonsDisable(){
     const $actionButtons = $(`.actionButtons`);
-    if (game.rounds === 9) {
+    if (game.rounds === 5) {
       $actionButtons.prop(`disabled`, true);
     } else {
       $actionButtons.prop(`disabled`, false);
