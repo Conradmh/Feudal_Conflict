@@ -157,8 +157,9 @@ const game = {
   endGame(){
     const $clearScreen = $('.game');
     const $winScreen = $('.winScreenContainer');
+    const $winMessage = $('#winMessage');
     if (this.rounds === 9) {
-      $winScreen.text(`Player${this.getWinner()} wins!`);
+      $winMessage.text(`Player ${this.getWinner()} wins!`);
       $clearScreen.addClass('hidden');
       $winScreen.removeClass('hidden');
     }
@@ -244,8 +245,8 @@ $('form').on('submit', (e) => {
 
 });
 $('#start').on('click', () => {
-  $('.submitFormBox').hide();
-  $('.startButton').addClass('hidden');
+  $('.submitContainer').hide();
+  $('.startButton').css('height', 0).addClass('hidden'); 'display', 'none'
   $('.game').removeClass('hidden');
   game.currentTurn();
   game.currentRound();
