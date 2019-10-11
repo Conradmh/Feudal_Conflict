@@ -1,5 +1,3 @@
-# Feudal_Conflict
-![alt text](https://i.imgur.com/QiC5b7t.png)
 
 # Feudal_Conflict
 ![alt text](https://i.imgur.com/QiC5b7t.png)
@@ -22,3 +20,5 @@ Resource Collection options:
 Buildings:
  *cost 1 red, 1 blue, 1 green resource
  *earn the user one point on purchase
+
+Active displays will track the turns, the rounds, the players points and resources as the game flows!
